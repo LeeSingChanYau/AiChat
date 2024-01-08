@@ -11,6 +11,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import OpenAI from 'openai';
 import axios from 'axios';
 import { useEffect } from 'react';
+import { API_KEY } from '@env';
 
 export default function App() {
   const [text, setText] = useState<string>('');
@@ -19,7 +20,7 @@ export default function App() {
     []
   );
   const openai = new OpenAI({
-    apiKey: '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', // This is the default and can be omitted
+    apiKey: API_KEY, // This is the default and can be omitted
   });
 
   const fetchAIResponse = async (prompt: string) => {
