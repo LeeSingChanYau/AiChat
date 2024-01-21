@@ -11,7 +11,6 @@ import { FontAwesome } from '@expo/vector-icons';
 import OpenAI from 'openai';
 import axios from 'axios';
 import { useEffect } from 'react';
-import { API_KEY } from '@env';
 
 export default function App() {
   const [text, setText] = useState<string>('');
@@ -19,9 +18,6 @@ export default function App() {
   const [messages, setMessages] = useState<{ role: string; content: string }[]>(
     []
   );
-  const openai = new OpenAI({
-    apiKey: API_KEY, // This is the default and can be omitted
-  });
 
   const fetchAIResponse = async (prompt: string) => {
     try {
